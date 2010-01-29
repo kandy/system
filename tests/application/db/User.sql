@@ -1,0 +1,19 @@
+CREATE TABLE User (
+	id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+	username VARCHAR(45) NOT NULL,
+	password CHAR(32) NOT NULL,
+	sponsorId INTEGER UNSIGNED NOT NULL,
+	partnerStatus INTEGER UNSIGNED NULL,
+	role VARCHAR(64) NOT NULL,
+	PRIMARY KEY(id),
+	INDEX User_FKIndex1(partnerStatus),
+	INDEX User_FKIndex2(sponsorId)
+)
+TYPE=InnoDB;
+
+CREATE TABLE UserSettings (
+	userId INT UNSIGNED NOT NULL PRIMARY KEY,
+	lang CHAR(2) NOT NULL DEFAULT 'en',
+	profile text
+)
+TYPE=InnoDB;

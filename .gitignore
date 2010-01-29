@@ -1,0 +1,12 @@
+.buildpath
+.DS_Store
+.cache/
+.project
+.settings
+.externalToolBuilders/
+*.log
+*.bak
+nbproject
+tests/reports/
+tests/application/configs/application.ini
+build/
