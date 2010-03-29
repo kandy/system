@@ -25,6 +25,6 @@ abstract class System_Controller_Action_Json extends System_Controller_Action_Ab
 		$viewRenderer = Zend_Controller_Action_HelperBroker::getStaticHelper('ViewRenderer');
 		$viewRenderer->setView($this->view);
 		
-		$response->setHeader('Content-type', 'application/json', true);
+		$response->setHeader('Content-type', 'text/javascript', true);
 	}
 }
