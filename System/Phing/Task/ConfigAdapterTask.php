@@ -48,11 +48,13 @@ class ConfigAdapterTask extends Task
 	protected function _loadConfig($file, $environment) {
 		$configCommon = new Zend_Config_Ini($file, $environment, true);
 
-		$configCustom = new Zend_Config_Ini(str_replace('.common.ini', '.ini', $file), $environment);
+		$customConfigName = str_replace('.common.ini', '.ini', $file);
+		if (file_exists($customConfigName)){
+			$configCustom = new Zend_Config_Ini($customConfigName, $environment);
+			$configCommon->merge($configCustom);
+		}
 
-		$configCommon->merge($configCustom);
 		$configCommon->path->root = getcwd();
-
 		$config = new System_Config_Placeholder($configCommon);
 
 		return $config->toArray();
