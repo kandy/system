@@ -2,7 +2,6 @@
 /**
  * Model_Auth_Adapter_User implements Zend_Auth_Adapter_Interface for authentication of users
  * 
- * @author oleg
  * @package model.auth.adapter
  */
 class Model_Auth_Adapter_User implements Zend_Auth_Adapter_Interface 

@@ -1,6 +1,5 @@
 <?php
 /**
- * @author oleg
  * @package system.tests
  * @covers System_Validate_Tb
  */

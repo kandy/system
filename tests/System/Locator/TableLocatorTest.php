@@ -1,6 +1,5 @@
 <?php
 /**
- * @author oleg
  * @package system.tests
  */
 class System_Locator_TableLocatorTest extends System_Test_TestCase 

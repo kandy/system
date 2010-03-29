@@ -12,8 +12,6 @@ require_once 'Dependencies/Shells.php';
 
 /**
  * DependenciesTask is used to check dependencies of development/product/etc environment
- *  
- * @author oleg
  */
 class DependenciesTask extends Task 
 {
