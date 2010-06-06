@@ -7,7 +7,6 @@ require_once 'Zend/Registry.php';
 /**
  * System Application holds configuration, initializes environment and bootstrap
  *
- * @author oleg
  * @package system.application
  */
 class System_Application extends Zend_Application

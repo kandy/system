@@ -14,6 +14,9 @@ class System_Controller_Action_TableEditor extends System_Controller_Action_Json
 	protected $_table = null;
 	
 	protected function _getJsonData($name, $returnArray = false) {
+		if (get_magic_quotes_gpc() == true) {
+			throw new System_Exception('Magic quotes is on');
+		}
 		$data = json_decode($this->getRequest()->getParam($name), $returnArray);
 		return $data;
 	}
