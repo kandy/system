@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="sLibrary" default="help">
 
-	<includepath classpath="." />
+	<includepath classpath="./library" />
 	
 	
 	<taskdef classname="System.Phing.Task.ConfigAdapterTask" name="system-config-adapter" />
@@ -153,7 +153,7 @@
 			</fileset>
 		</coverage-setup>
 
-		<phpunit34
+		<phpunit
 			codecoverage="true"
 			haltonfailure="false"
 			haltonerror="false"
@@ -169,7 +169,7 @@
 					<include name="${group}/**/*Test*.php"/>
 				</fileset>
 			</batchtest>
-		</phpunit34>
+		</phpunit>
 
 		<phpunitreport infile="${path.build}/reports/groups/${group}/tests/testsuites.xml"
 			format="frames"
@@ -243,22 +243,21 @@
 	</target>
 
 	<target name="test" depends="_init-test, _init-dirs, _create-and-fresh-db-test" description="Run PHPUnit tests">
-		<phpunit34
+		<phpunit
 			haltonfailure="false"
 			haltonerror="false"
 			failureproperty="phing.phpunit.failure"
 			errorproperty="phing.phpunit.error"
 			incompleteproperty="phing.phpunit.incomplete"
 			skippedproperty="phing.phpunit.skipped"
-			bootstrapfile="${path.tests}/bootstrap.php" >
-			<formatter todir="${path.build}/reports/tests" classname="System.Phing.Task.PhpUnit3.JUnitResultFormatter"/>
+			>
 			<formatter type="plain" usefile="false" />
 			<batchtest>
 				<fileset dir="${path.tests}">
 					<include name="**/*Test*.php"/>
 				</fileset>
 			</batchtest>
-		</phpunit34>
+		</phpunit>
 		
 		<phpunitreport infile="${path.build}/reports/tests/testsuites.xml"
 			format="frames"
